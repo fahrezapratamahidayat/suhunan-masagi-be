@@ -13,16 +13,18 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum; // ⬅️ WAJIB
 
 class HeroResource extends Resource
 {
     protected static ?string $model = Hero::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon =
+        Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationGroup = 'Konten Website';
+    protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
 
     public static function form(Schema $schema): Schema
     {
@@ -36,9 +38,7 @@ class HeroResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

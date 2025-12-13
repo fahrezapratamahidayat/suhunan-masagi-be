@@ -13,16 +13,18 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum; // ⬅️ WAJIB
 
 class TeamMemberResource extends Resource
 {
     protected static ?string $model = TeamMember::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon =
+        Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static ?string $navigationGroup = 'Manajemen Museum';
+    protected static UnitEnum|string|null $navigationGroup = 'Manajemen Museum';
 
     protected static ?string $navigationLabel = 'Struktur Organisasi';
     protected static ?string $pluralModelLabel = 'Struktur Organisasi';
@@ -40,9 +42,7 @@ class TeamMemberResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
