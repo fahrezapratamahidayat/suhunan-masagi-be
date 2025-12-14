@@ -26,6 +26,10 @@ class ArticleResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
 
+    protected static ?string $navigationLabel = 'Kelola Artikel';
+    protected static ?string $pluralModelLabel = 'Artikel';
+    protected static ?string $modelLabel = 'Artikel';
+
     public static function form(Schema $schema): Schema
     {
         return ArticleForm::configure($schema);

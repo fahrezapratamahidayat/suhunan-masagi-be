@@ -18,11 +18,13 @@ class HeroesTable
         return $table
             ->columns([
                 ImageColumn::make('image')
-                    ->label('Thumbnail'),
+                    ->label('Gambar'),
                 TextColumn::make('title')
+                    ->label('Judul')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('order')
+                    ->label('Urutan')
                     ->sortable(),
                 ToggleColumn::make('is_active')
                     ->label('Aktif'),

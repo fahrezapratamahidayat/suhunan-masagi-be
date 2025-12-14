@@ -26,6 +26,10 @@ class CollectionResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Manajemen Museum';
 
+    protected static ?string $navigationLabel = 'Kelola Koleksi';
+    protected static ?string $pluralModelLabel = 'Koleksi';
+    protected static ?string $modelLabel = 'Koleksi';
+
     public static function form(Schema $schema): Schema
     {
         return CollectionForm::configure($schema);

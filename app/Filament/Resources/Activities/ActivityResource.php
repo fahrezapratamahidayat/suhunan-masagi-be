@@ -26,6 +26,10 @@ class ActivityResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
 
+    protected static ?string $navigationLabel = 'Kelola Kegiatan';
+    protected static ?string $pluralModelLabel = 'Kegiatan';
+    protected static ?string $modelLabel = 'Kegiatan';
+
     public static function form(Schema $schema): Schema
     {
         return ActivityForm::configure($schema);

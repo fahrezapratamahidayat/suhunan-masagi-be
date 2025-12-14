@@ -26,9 +26,9 @@ class TeamMemberResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Manajemen Museum';
 
-    protected static ?string $navigationLabel = 'Struktur Organisasi';
+    protected static ?string $navigationLabel = 'Kelola Struktur Organisasi';
     protected static ?string $pluralModelLabel = 'Struktur Organisasi';
-    protected static ?string $modelLabel = 'Anggota';
+    protected static ?string $modelLabel = 'Struktur Organisasi';
 
     public static function form(Schema $schema): Schema
     {

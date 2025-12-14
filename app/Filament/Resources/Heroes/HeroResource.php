@@ -26,6 +26,10 @@ class HeroResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
 
+    protected static ?string $navigationLabel = 'Kelola Hero';
+    protected static ?string $pluralModelLabel = 'Hero';
+    protected static ?string $modelLabel = 'Hero';
+
     public static function form(Schema $schema): Schema
     {
         return HeroForm::configure($schema);

@@ -17,13 +17,17 @@ class CollectionsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Thumbnail'),
                 TextColumn::make('name')
+                    ->label('Nama Koleksi')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('type')
+                    ->label('Kategori')
                     ->searchable(),
-                ToggleColumn::make('is_visible'),
+                ToggleColumn::make('is_visible')
+                    ->label('Tampilkan'),
             ])
             ->filters([
                 //

@@ -16,11 +16,14 @@ class ArticlesTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Gambar'),
                 TextColumn::make('title')
+                    ->label('Judul')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('type')
+                    ->label('Tipe')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'news' => 'info',
@@ -28,6 +31,7 @@ class ArticlesTable
                         'announcement' => 'warning',
                     }),
                 TextColumn::make('status')
+                    ->label('Status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'draft' => 'gray',
@@ -35,6 +39,7 @@ class ArticlesTable
                         'archived' => 'danger',
                     }),
                 TextColumn::make('published_at')
+                    ->label('Tanggal Publikasi')
                     ->date()
                     ->sortable(),
             ])

@@ -19,10 +19,12 @@ class CollectionForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Koleksi')
                     ->required()
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn (string $state, $set) => $set('slug', Str::slug($state))),
                 TextInput::make('slug')
+                    ->label('Slug')
                     ->required()
                     ->unique(ignoreRecord: true),
                 TextInput::make('type')
@@ -41,8 +43,10 @@ class CollectionForm
                     ->directory('collections/gallery')
                     ->columnSpanFull(),
                 RichEditor::make('description')
+                    ->label('Deskripsi')
                     ->columnSpanFull(),
                 Toggle::make('is_visible')
+                    ->label('Tampilkan di Website')
                     ->default(true),
             ]);
     }
