@@ -24,6 +24,7 @@ class TeamMemberForm
                 FileUpload::make('image')
                     ->label('Foto')
                     ->image()
+                    ->disk('public')
                     ->directory('team-members')
                     ->avatar()
                     ->circleCropper(),

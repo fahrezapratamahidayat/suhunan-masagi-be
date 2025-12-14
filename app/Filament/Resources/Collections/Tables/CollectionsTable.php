@@ -18,7 +18,8 @@ class CollectionsTable
         return $table
             ->columns([
                 ImageColumn::make('image')
-                    ->label('Thumbnail'),
+                    ->label('Thumbnail')
+                    ->disk('public'),
                 TextColumn::make('name')
                     ->label('Nama Koleksi')
                     ->searchable()

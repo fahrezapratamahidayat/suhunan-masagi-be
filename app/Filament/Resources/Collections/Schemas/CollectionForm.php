@@ -33,6 +33,7 @@ class CollectionForm
                 FileUpload::make('image')
                     ->label('Thumbnail Utama')
                     ->image()
+                    ->disk('public')
                     ->directory('collections/thumbnails')
                     ->required(),
                 FileUpload::make('gallery')
@@ -40,6 +41,7 @@ class CollectionForm
                     ->image()
                     ->multiple()
                     ->reorderable()
+                    ->disk('public')
                     ->directory('collections/gallery')
                     ->columnSpanFull(),
                 RichEditor::make('description')

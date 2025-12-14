@@ -40,6 +40,7 @@ class ArticleForm
                 FileUpload::make('image')
                     ->label('Gambar Utama')
                     ->image()
+                    ->disk('public')
                     ->directory('articles'),
                 RichEditor::make('content')
                     ->label('Konten')

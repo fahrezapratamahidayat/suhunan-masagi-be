@@ -17,7 +17,8 @@ class ActivitiesTable
         return $table
             ->columns([
                 ImageColumn::make('image')
-                    ->label('Gambar'),
+                    ->label('Gambar')
+                    ->disk('public'),
                 TextColumn::make('title')
                     ->label('Judul')
                     ->searchable()

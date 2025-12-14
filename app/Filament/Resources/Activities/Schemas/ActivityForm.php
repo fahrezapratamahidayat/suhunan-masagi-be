@@ -32,6 +32,7 @@ class ActivityForm
                 FileUpload::make('image')
                     ->label('Gambar')
                     ->image()
+                    ->disk('public')
                     ->directory('activities'),
                 DatePicker::make('date')
                     ->label('Tanggal Kegiatan')
