@@ -16,18 +16,26 @@ class ActivitiesTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Gambar')
+                    ->disk('public'),
                 TextColumn::make('title')
+                    ->label('Judul')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('date')
+                    ->label('Tanggal')
                     ->date()
                     ->sortable(),
-                TextColumn::make('start_time'),
-                TextColumn::make('end_time'),
+                TextColumn::make('start_time')
+                    ->label('Mulai'),
+                TextColumn::make('end_time')
+                    ->label('Selesai'),
                 TextColumn::make('location')
+                    ->label('Lokasi')
                     ->searchable(),
                 TextColumn::make('status')
+                    ->label('Status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'upcoming' => 'gray',

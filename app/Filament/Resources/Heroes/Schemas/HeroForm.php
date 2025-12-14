@@ -26,6 +26,7 @@ class HeroForm
                 FileUpload::make('image')
                     ->label('Gambar Slider')
                     ->image()
+                    ->disk('public')
                     ->directory('hero-slides')
                     ->required()
                     ->columnSpanFull(),

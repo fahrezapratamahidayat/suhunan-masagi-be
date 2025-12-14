@@ -13,16 +13,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum; // ⬅️ WAJIB
 
 class ActivityResource extends Resource
 {
     protected static ?string $model = Activity::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon =
+        Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationGroup = 'Konten Website';
+    protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
+
+    protected static ?string $navigationLabel = 'Kelola Kegiatan';
+    protected static ?string $pluralModelLabel = 'Kegiatan';
+    protected static ?string $modelLabel = 'Kegiatan';
 
     public static function form(Schema $schema): Schema
     {
@@ -36,9 +42,7 @@ class ActivityResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

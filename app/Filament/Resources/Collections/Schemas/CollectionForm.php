@@ -19,10 +19,12 @@ class CollectionForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Koleksi')
                     ->required()
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn (string $state, $set) => $set('slug', Str::slug($state))),
                 TextInput::make('slug')
+                    ->label('Slug')
                     ->required()
                     ->unique(ignoreRecord: true),
                 TextInput::make('type')
@@ -31,6 +33,7 @@ class CollectionForm
                 FileUpload::make('image')
                     ->label('Thumbnail Utama')
                     ->image()
+                    ->disk('public')
                     ->directory('collections/thumbnails')
                     ->required(),
                 FileUpload::make('gallery')
@@ -38,11 +41,14 @@ class CollectionForm
                     ->image()
                     ->multiple()
                     ->reorderable()
+                    ->disk('public')
                     ->directory('collections/gallery')
                     ->columnSpanFull(),
                 RichEditor::make('description')
+                    ->label('Deskripsi')
                     ->columnSpanFull(),
                 Toggle::make('is_visible')
+                    ->label('Tampilkan di Website')
                     ->default(true),
             ]);
     }

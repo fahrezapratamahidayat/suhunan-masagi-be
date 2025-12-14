@@ -13,16 +13,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum; // ⬅️ WAJIB
 
 class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon =
+        Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationGroup = 'Konten Website';
+    protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
+
+    protected static ?string $navigationLabel = 'Kelola Artikel';
+    protected static ?string $pluralModelLabel = 'Artikel';
+    protected static ?string $modelLabel = 'Artikel';
 
     public static function form(Schema $schema): Schema
     {
@@ -36,9 +42,7 @@ class ArticleResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

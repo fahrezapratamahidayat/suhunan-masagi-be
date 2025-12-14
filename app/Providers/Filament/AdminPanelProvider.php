@@ -27,12 +27,12 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(\App\Filament\Pages\Auth\Login::class)
             ->colors([
                 'primary' => Color::Indigo,
                 'gray' => Color::Slate,
             ])
-            ->brandName('Suhunan Masagi')
+            ->brandName('Admin Bumi Sasuhunan Pakarang')
             ->font('Outfit')
             ->sidebarCollapsibleOnDesktop()
             ->favicon(asset('images/favicon.png')) // Placeholder
