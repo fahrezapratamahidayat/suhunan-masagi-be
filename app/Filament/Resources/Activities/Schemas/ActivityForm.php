@@ -33,7 +33,11 @@ class ActivityForm
                     ->label('Gambar')
                     ->image()
                     ->disk('public')
-                    ->directory('activities'),
+                    ->directory('activities')
+                    ->visibility('public')
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true),
                 DatePicker::make('date')
                     ->label('Tanggal Kegiatan')
                     ->required(),

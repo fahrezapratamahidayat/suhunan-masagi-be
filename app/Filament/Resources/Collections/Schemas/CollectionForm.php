@@ -35,7 +35,11 @@ class CollectionForm
                     ->image()
                     ->disk('public')
                     ->directory('collections/thumbnails')
-                    ->required(),
+                    ->visibility('public')
+                    ->required()
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true),
                 FileUpload::make('gallery')
                     ->label('Galeri Foto Lainya')
                     ->image()
@@ -43,6 +47,10 @@ class CollectionForm
                     ->reorderable()
                     ->disk('public')
                     ->directory('collections/gallery')
+                    ->visibility('public')
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true)
                     ->columnSpanFull(),
                 RichEditor::make('description')
                     ->label('Deskripsi')

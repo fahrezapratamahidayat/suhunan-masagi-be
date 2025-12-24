@@ -28,7 +28,11 @@ class HeroForm
                     ->image()
                     ->disk('public')
                     ->directory('hero-slides')
+                    ->visibility('public')
                     ->required()
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true)
                     ->columnSpanFull(),
                 TextInput::make('cta_text')
                     ->label('Teks Tombol')

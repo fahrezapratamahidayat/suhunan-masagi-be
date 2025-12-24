@@ -41,7 +41,11 @@ class ArticleForm
                     ->label('Gambar Utama')
                     ->image()
                     ->disk('public')
-                    ->directory('articles'),
+                    ->directory('articles')
+                    ->visibility('public')
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true),
                 RichEditor::make('content')
                     ->label('Konten')
                     ->columnSpanFull(),

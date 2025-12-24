@@ -26,8 +26,12 @@ class TeamMemberForm
                     ->image()
                     ->disk('public')
                     ->directory('team-members')
+                    ->visibility('public')
                     ->avatar()
-                    ->circleCropper(),
+                    ->circleCropper()
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true),
                 TextInput::make('order')
                     ->label('Urutan')
                     ->numeric()
